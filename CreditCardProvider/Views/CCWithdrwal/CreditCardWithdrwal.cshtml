@@ -1,0 +1,34 @@
+﻿@model CreditCardProvider.Models.ViewModels.WithdrwalRequest
+@{
+}
+<div class="bg-secondary" bg-opecity-10 py-2>
+    <div class="container">
+        <h1>Money Withdrwal Form</h1>
+    </div>
+</div>
+
+<div class="container" py="5">
+    <form method="post">
+        <div class="mb-3">
+            <lable class="form-label">Credit Card Number</lable>
+            <input type="text" class="form-control" id="credidCardNumber" asp-for="CreditCardNumber" />
+        </div>
+        <div class="mb-3">
+            <lable class="form-label">Last Name</lable>
+            <input type="text" class="form-control" id="lastName" asp-for="LastName" />
+        </div>
+        <div class="mb-3">
+            <lable class="form-label">Amount to withdraw</lable>
+            <input type="text" class="form-control" id="amount" asp-for="PurchaseAmount" />
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-dark" >Submit</button>
+        </div>
+        @if (Model != null && Model.ReturnMessage != "")
+        {
+            <div class="mb-3">
+                <label asp-for="ReturnMessage" class=" alert-danger">@Model.ReturnMessage</label>
+        </div>
+        }
+    </form>
+</div>
